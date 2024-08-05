@@ -22,8 +22,8 @@
     }
   ],
   "functions": {
-    "carbon": {
-      "maxDuration": 45
+    "/*.js": {
+      "maxDuration": 60
     }
   }
 }
