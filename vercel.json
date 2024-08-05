@@ -21,11 +21,10 @@
       "dest": "index.js"
     }
   ],
-  "functions": [
-    {
-      "name": "carbon",
+  "functions": {
+    "api/index.js": {
       "runtime": "nodejs22.x",
-      "config": { "maxDuration": 60 }
+      "maxDuration": 60
     }
-  ]
+  }
 }
