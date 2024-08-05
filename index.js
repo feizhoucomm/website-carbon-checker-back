@@ -1,29 +1,26 @@
 const express = require("express");
+// const fetch = require('node-fetch');
 const cors = require("cors");
-const fetch = require("node-fetch");
 const app = express();
-const port = 3001;
+const port = 3001; // You can use any port you prefer
+// require detenv file :
 
 require("dotenv").config();
-
+console.log("process.env.CLIENT_SIDE");
+console.log(process.env.CLIENT_SIDE);
 app.use(
   cors({
-    origin: [
-      "https://website-carbon-checker-front-bubbxdj3b-feizhoucom.vercel.app",
-      "https://website-carbon-checker-front.vercel.app",
-    ],
+    origin: "*", // Allow requests from any origin
     credentials: true,
     methods: ["GET"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
 app.get("/", (req, res) => {
   res.json({
     message: "Welcome to websites carbon calculator!",
   });
 });
-
 app.get("/carbon", async (req, res) => {
   const { url } = req.query;
 
