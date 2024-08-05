@@ -18,7 +18,11 @@ app.use(
     optionsSuccessStatus: 200, // Some legacy browsers (IE11, various Android versions) choke on 204
   })
 );
-
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to websites carbon calculator!",
+  });
+});
 app.get("/carbon", async (req, res) => {
   const { url } = req.query;
 
