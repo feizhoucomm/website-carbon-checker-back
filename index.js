@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
     message: "Welcome to websites carbon calculator!",
   });
 });
-app.get("/test", (req, res) => {
+app.get("/test",async (req, res) => {
   try {
     const response = await fetch(
       `${process.env.CARBON_API}/site?url=${encodeURIComponent("https://feizhoucom.com")}`
@@ -32,7 +32,6 @@ app.get("/test", (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Error fetching data" });
   }
-});
 });
 app.get("/carbon", async (req, res) => {
   const { url } = req.query;
