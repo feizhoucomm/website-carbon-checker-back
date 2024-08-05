@@ -12,8 +12,8 @@ app.use(
   cors({
     origin: "*", // Allow requests from any origin
     credentials: true,
-    methods: ["GET"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type"],
   })
 );
 app.get("/", (req, res) => {
