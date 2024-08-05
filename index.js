@@ -16,6 +16,24 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to websites carbon calculator!",
+  });
+});
+app.get("/test", (req, res) => {
+  try {
+    const response = await fetch(
+      `${process.env.CARBON_API}/site?url=${encodeURIComponent("https://feizhoucom.com")}`
+    );
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching data" });
+  }
+});
+});
 app.get("/carbon", async (req, res) => {
   const { url } = req.query;
 
@@ -28,12 +46,6 @@ app.get("/carbon", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Error fetching data" });
   }
-});
-
-app.get("/", (req, res) => {
-  res.json({
-    message: "Welcome to websites carbon calculator!",
-  });
 });
 
 app.listen(port, () => {
