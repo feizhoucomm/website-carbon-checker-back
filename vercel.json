@@ -11,6 +11,15 @@
     {
       "src": "/(:path*)",
       "dest": "index.js"
+    },
+    {
+      "src": "/test",
+      "dest": "index.js"
+    },
+    {
+      "src": "/carbon/(:path*)",
+      "methods": ["GET"],
+      "dest": "index.js"
     }
   ]
 }
