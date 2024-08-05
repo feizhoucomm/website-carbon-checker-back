@@ -20,5 +20,10 @@
       "src": "/carbon",
       "dest": "index.js"
     }
-  ]
+  ],
+  "functions": {
+    "carbon": {
+      "maxDuration": 45
+    }
+  }
 }
