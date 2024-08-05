@@ -10,7 +10,7 @@ console.log("process.env.CLIENT_SIDE");
 console.log(process.env.CLIENT_SIDE);
 app.use(
   cors({
-    origin: [process.env.CLIENT_SIDE], // Replace with your actual frontend domain
+    origin: ["https://website-carbon-checker-front-bubbxdj3b-feizhoucom.vercel.app"], // Replace with your actual frontend domain
     credentials: true,
     methods: ["GET"],
     allowedHeaders: ["Content-Type", "Authorization"],
