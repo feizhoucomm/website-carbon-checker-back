@@ -17,6 +17,17 @@ app.use(
   })
 );
 app.get("/", (req, res) => {
+  const { url } = req.query;
+
+  try {
+    const response = await fetch(
+      `${process.env.CARBON_API}/site?url=${encodeURIComponent(url)}`
+    );
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching data" });
+  }
   res.json({
     message: "Welcome to websites carbon calculator!",
   });
